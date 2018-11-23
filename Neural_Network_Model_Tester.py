@@ -5,13 +5,14 @@ from keras.callbacks import TensorBoard
 import pandas as pd
 import keras
 import itertools
+import numpy as np
 
 from keras import Sequential
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation
 import time
 
-numpy.random.seed(42)
+np.random.seed(42)
 
 # training data
 print('loading training data...')
@@ -50,8 +51,8 @@ y_test_labels = keras.utils.to_categorical(y_test, num_classes=n_classes)
 print('done')
 
 # iterate through different model structures
-layers = [3, 4, 5]
-layer_sizes = [64, 128, 256, 512]
+layers = [5]
+layer_sizes = [32, 64, 128] # update to 128,256,512
 
 for layer in layers:
     nodes = list(itertools.product(layer_sizes, repeat=layer))
@@ -84,7 +85,7 @@ for layer in layers:
         model.fit(
             X_train,
             y_train_labels,
-            epochs=20,
+            epochs=5,
             verbose=1,
             batch_size=128,
             validation_data=(X_test, y_test_labels),
