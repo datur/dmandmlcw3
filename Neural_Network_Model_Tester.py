@@ -12,7 +12,7 @@ import time
 
 # training data
 print('loading training data...')
-train_data = pd.read_csv('fer2017-training.csv')
+train_data = pd.read_csv('csv_files/fer2017-training.csv')
 train_labels = train_data['emotion'].copy()
 train_data.drop('emotion', axis=1, inplace=True)
 
@@ -26,7 +26,7 @@ print('done')
 
 # test data
 print('loading testing data...')
-test_data = pd.read_csv('fer2017-testing.csv')
+test_data = pd.read_csv('csv_files/fer2017-testing.csv')
 test_labels = test_data['emotion'].copy()
 
 test_data.drop('emotion', axis=1, inplace=True)
