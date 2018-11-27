@@ -16,3 +16,5 @@
 [7]"Model - Keras Documentation", Keras.io, 2018. [Online]. Available: https://keras.io/models/model/. [Accessed: 27- Nov- 2018].
 
 [8]"Sequential - Keras Documentation", Keras.io, 2018. [Online]. Available: https://keras.io/models/sequential/. [Accessed: 27- Nov- 2018].
+
+[9]L. Ang, "A comprehensive guide on how to fine-tune deep neural networks using Keras on Google Colab (Free…", Towards Data Science, 2018. [Online]. Available: https://towardsdatascience.com/a-comprehensive-guide-on-how-to-fine-tune-deep-neural-networks-using-keras-on-google-colab-free-daaaa0aced8f. [Accessed: 27- Nov- 2018].
