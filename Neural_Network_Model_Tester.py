@@ -12,7 +12,7 @@ import time
 
 # training data
 print('loading training data...')
-train_data = pd.read_csv('csv_files/fer2017-training.csv')
+train_data = pd.read_csv('csv_files/fer2017-training-happy-updated.csv')
 train_labels = train_data['emotion'].copy()
 train_data.drop('emotion', axis=1, inplace=True)
 
@@ -26,7 +26,7 @@ print('done')
 
 # test data
 print('loading testing data...')
-test_data = pd.read_csv('csv_files/fer2017-testing.csv')
+test_data = pd.read_csv('csv_files/fer2017-testing-happy-updated.csv')
 test_labels = test_data['emotion'].copy()
 
 test_data.drop('emotion', axis=1, inplace=True)
@@ -46,14 +46,14 @@ y_test_labels = keras.utils.to_categorical(y_test, num_classes=n_classes)
 print('done')
 
 # iterate through different model structures
-layers = [2, 3, 4, 5]
-layer_sizes = [32, 64, 128, 256, 512]
+layers = [3]
+layer_sizes = [1024]
 
 for layer in layers:
     for layer_size in layer_sizes:
 
-        NAME = 'mlp-{}-hidden-layers-{}-nodes--{}'.format(
-            layer - 1, layer_size, int(time.time()))
+        NAME = 'mlp-{}-hidden-layers-{}-nodes-HappyEmotion-{}'.format(
+            layer, layer_size, int(time.time()))
         tensorboard = TensorBoard(log_dir='mlp/logs/{}'.format(NAME))
 
         print('Current Model:\t', NAME)
@@ -79,7 +79,7 @@ for layer in layers:
         model.fit(
             X_train,
             y_train_labels,
-            epochs=10,
+            epochs=50,
             verbose=1,
             batch_size=32,
             validation_data=(X_test, y_test_labels),
