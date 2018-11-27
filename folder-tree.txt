@@ -1,0 +1,26 @@
+cw3-ims/
+├── fullfer
+│   ├── test
+│   │   ├── angry
+│   │   ├── disgust
+│   │   ├── fear
+│   │   ├── happy
+│   │   ├── neutral
+│   │   ├── sad
+│   │   └── surprise
+│   └── train
+│       ├── angry
+│       ├── disgust
+│       ├── fear
+│       ├── happy
+│       ├── neutral
+│       ├── sad
+│       └── surprise
+└── happyemotion
+    ├── test
+    │   ├── happy
+    │   └── nothappy
+    └── train
+        ├── happy
+        └── nothappy
+
